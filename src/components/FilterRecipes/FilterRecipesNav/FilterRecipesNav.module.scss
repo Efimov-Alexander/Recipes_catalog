@@ -1,0 +1,16 @@
+.header {
+	display: flex;
+}
+
+.nav {
+	max-width: 222px;
+	width: 100%;
+	display: flex;
+	margin-right: 114px;
+	flex-direction: column;
+}
+
+.nav_item {
+	display: flex;
+	flex-direction: column;
+}

@@ -1,0 +1,47 @@
+.background {
+	height: 435px;
+	background-image: url("../../aseets/images/main.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.container {
+	max-width: 1430px;
+	padding: 0 15px;
+	margin: 0 auto;
+	@media (max-width: 767.98px) {
+		max-width: 1420px;
+		padding: 0 10px;
+	}
+}
+
+.title {
+	padding-top: 118px;
+	font-size: 60px;
+	color: #fff;
+	font-weight: 400;
+	margin-bottom: 42px;
+	span {
+		font-weight: 700;
+	}
+}
+
+.button {
+	margin-left: 52px;
+	padding: 0 80px;
+	height: 80px;
+	background-color: transparent;
+	border: 2px solid #fff;
+	font-size: 50px;
+	color: #fff;
+	cursor: pointer;
+	font-family: "Mina", sans-serif;
+	transition: all 0.3s ease 0s;
+	@media (any-hover: hover) {
+		&:hover {
+			color: #c3df82;
+			border: 2px solid #c3df82;
+		}
+	}
+}

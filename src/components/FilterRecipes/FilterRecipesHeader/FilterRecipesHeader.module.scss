@@ -1,0 +1,25 @@
+.header {
+	display: flex;
+	margin-bottom: 24px;
+}
+
+.nav {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	font-size: 20px;
+	color: #84bd00;
+	font-weight: 600;
+	height: 62px;
+	align-items: center;
+	border-top: 2px solid #d9d9d9;
+	border-bottom: 2px solid #d9d9d9;
+}
+
+.title {
+	white-space: nowrap;
+	color: #84bd00;
+	font-size: 50px;
+	font-family: "Montez", sans-serif;
+	margin-right: 114px;
+}
