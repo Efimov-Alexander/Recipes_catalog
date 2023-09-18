@@ -1,0 +1,129 @@
+.nav_item {
+	display: flex;
+	flex-direction: column;
+	font-size: 24px;
+	font-weight: 500;
+	transition: all 0.2s ease 0s;
+	&:not(:last-child) {
+		border-bottom: 2px solid #d9d9d9;
+	}
+}
+
+.nav_item_closed {
+	&:not(:last-child) {
+		margin-bottom: 0px;
+	}
+	.nav_item_title {
+		svg {
+			transform: rotate(90deg);
+		}
+	}
+}
+
+.nav_item_title {
+	cursor: pointer;
+	position: relative;
+	width: fit-content;
+	display: inline-flex;
+	align-items: center;
+	transition: all 0.2s ease 0s;
+	display: flex;
+	padding: 14px 22px;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+	&:last-child {
+		padding-bottom: 10px;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #f9ffec;
+			color: #84bd00;
+			svg {
+				path {
+					fill: #84bd00;
+				}
+			}
+		}
+	}
+	svg {
+		margin-left: 32px;
+		height: 6px;
+		width: 20px;
+		position: relative;
+		transition: all 0.2s ease 0s;
+		path {
+			fill: #2f2f2f;
+			transition: all 0.2s ease 0s;
+		}
+	}
+}
+
+.buttons_wrapper {
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-60px);
+	transition: transform 0.2s ease 0s;
+}
+.buttons_wrapper_open {
+	position: relative;
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.button_wrapper {
+	cursor: pointer;
+	padding: 6px 14px;
+	position: relative;
+	align-items: center;
+	display: flex;
+	align-items: center;
+	&:first-child {
+		border-bottom: 2px solid #d9d9d9;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #f9ffec;
+		}
+	}
+}
+.checkbox {
+	cursor: pointer;
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	&:checked + .button_text::before {
+		border-color: #84bd00;
+		background-color: #e1ff9a;
+		background-image: url("../../../aseets//images//svg//checkbox.svg");
+	}
+}
+.button_text {
+	display: flex;
+	align-items: center;
+	text-align: left;
+	width: fit-content;
+	font-size: 20px;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+	transition: all 0.2s ease 0s;
+	&::before {
+		content: "";
+		display: inline-block;
+		height: 20px;
+		width: 20px;
+		border: 2px solid #adb5bd;
+		border-radius: 0.25em;
+		margin-right: 10px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 100% 80%;
+		transition: all 0.3s ease 0s;
+	}
+}

@@ -1,7 +1,8 @@
-import s from './FilterRecipesHeader.module.scss'
+import React from 'react'
+import s from './Header.module.scss'
 
 
-export const FilterRecipesHeader = () => {
+export const Header: React.FC = () => {
 	return (
 		<div className={s.header}>
 			<h2 className={s.title}>Filter Recipes</h2>

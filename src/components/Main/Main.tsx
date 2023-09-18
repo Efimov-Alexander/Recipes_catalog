@@ -1,6 +1,7 @@
+import React from 'react'
 import s from './Main.module.scss'
 
-export const Main = () => {
+export const Main: React.FC = () => {
 	return (
 		<section className={s.background}>
 			<div className={s.container}>

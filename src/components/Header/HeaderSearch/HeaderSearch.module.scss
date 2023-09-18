@@ -28,12 +28,16 @@
 	display: inline-block;
 	height: 100%;
 	position: relative;
+	svg {
+		width: 20px;
+		height: 6px;
+	}
 }
 
 .arrow_down {
 	position: absolute;
 	top: 50%;
-	right: 15px;
+	right: 12px;
 	transform: translateY(-50%);
 	pointer-events: none;
 }

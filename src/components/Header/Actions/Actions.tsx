@@ -1,7 +1,8 @@
+import React from 'react'
 import { ReactComponent as Cart } from '../../../aseets/images/svg/cart.svg'
 import s from './Actions.module.scss'
 
-export const Actions = () => {
+export const Actions: React.FC = () => {
 	return (
 		<div className={s.actions_wrapper}>
 			<div className={s.cart_wrapper}>

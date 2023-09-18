@@ -1,11 +1,16 @@
 export type TRecipe = {
 	image: string,
-	id?: number,
+	id: number,
 	pricePerServing: number,
 	readyInMinutes: number,
 	title: string,
+	aggregateLikes: number,
+	healthScore: number,
+	servings: number,
+	cuisines: string[],
 }
 
 export type TRecipes = {
-	recipes: TRecipe[]
+	results: TRecipe[]
 }
+

@@ -1,0 +1,36 @@
+.query_button {
+	position: absolute;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	padding: 12px 28px;
+	font-size: 20px;
+	background-color: #a7dc2d;
+	right: 0;
+	outline: none;
+	transform: translateX(100%);
+	border: 1px solid #86af25;
+	transition: all 0.2s ease 0s;
+	&::before {
+		border-top: 1px solid #86af25;
+		border-left: 1px solid #86af25;
+		position: absolute;
+		left: 0;
+		transform: translateX(-50%) rotate(-45deg);
+		content: "";
+		height: 14px;
+		width: 14px;
+		background-color: #a7dc2d;
+		display: block;
+		transition: all 0.2s ease 0s;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #a7e712;
+		}
+		&:hover::before {
+			background-color: #a7e712;
+		}
+	}
+}

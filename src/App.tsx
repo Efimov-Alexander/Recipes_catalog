@@ -1,6 +1,6 @@
 import './aseets/styles/App.scss';
 import './aseets/styles/null.css'
-import { FilterRecipes } from './components/FilterRecipes/FilterRecipes';
+import { Recipes } from './components/Recipes/Recipes';
 import { Header } from './components/Header/Header';
 import { Main } from './components/Main/Main';
 
@@ -11,7 +11,7 @@ function App() {
 		<>
 			<Header />
 			<Main />
-			<FilterRecipes />
+			<Recipes />
 		</>
 	);
 }

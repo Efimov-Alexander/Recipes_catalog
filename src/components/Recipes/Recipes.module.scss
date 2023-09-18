@@ -1,0 +1,43 @@
+.container {
+	max-width: 1330px;
+	padding: 0 15px;
+	margin: 0 auto;
+	@media (max-width: 767.98px) {
+		max-width: 1320px;
+		padding: 0 10px;
+	}
+}
+
+.body {
+	display: flex;
+	padding-bottom: 32px;
+}
+
+.section {
+	padding-top: 32px;
+	background-image: url("../../aseets//images//recipes_bg.png");
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.recipes_body {
+	height: fit-content;
+	flex: 1 1 auto;
+	display: grid;
+	gap: 30px;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.nav_body {
+	position: relative;
+	z-index: 40;
+	min-width: 235px;
+	flex: 0 0 auto;
+	display: flex;
+	margin-right: 80px;
+	flex-direction: column;
+	background-color: #fff;
+	height: fit-content;
+	box-shadow: 0 0 20px 1px #dddddd;
+	border-radius: 5px;
+}

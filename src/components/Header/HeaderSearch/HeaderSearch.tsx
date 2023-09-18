@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { ReactComponent as ArrowDown } from '../../../aseets/images/svg/arrow_down.svg'
 import { ReactComponent as SearchButton } from '../../../aseets/images/svg/search.svg'
 import s from './HeaderSearch.module.scss'
 
 
-export const HeaderSearch = () => {
+export const HeaderSearch: React.FC = () => {
 
 	const [select, setSelect] = useState("All Categories")
 
