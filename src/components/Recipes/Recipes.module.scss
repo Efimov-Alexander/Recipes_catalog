@@ -7,27 +7,30 @@
 		padding: 0 10px;
 	}
 }
-
 .body {
 	display: flex;
 	padding-bottom: 32px;
 }
-
 .section {
 	padding-top: 32px;
 	background-image: url("../../aseets//images//recipes_bg.png");
 	background-repeat: no-repeat;
 	background-position: right;
 }
-
-.recipes_body {
+.tile_recipes_body {
 	height: fit-content;
 	flex: 1 1 auto;
 	display: grid;
 	gap: 30px;
 	grid-template-columns: repeat(3, 1fr);
 }
-
+.row_recipes_body {
+	height: fit-content;
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
 .nav_body {
 	position: relative;
 	z-index: 40;

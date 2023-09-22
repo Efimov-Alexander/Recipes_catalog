@@ -2,14 +2,15 @@ import s from './Recipes.module.scss'
 import { Header } from './Header/Header';
 import { TypesFilter } from './Filters/TypesFilter';
 import { useRecipes } from '../../hooks/useRecipes';
-import { Recipe } from './Recipe/Recipe';
+import { TileRecipe } from './TileRecipe/TileRecipe';
 import React from 'react';
 import { DietsFilter } from './Filters/DietsFilter';
+import { RowRecipe } from './RowRecipe/RowRecipe';
 
 
 export const Recipes: React.FC = () => {
 
-	const { data, isLoading } = useRecipes()
+	const { data, isLoading, isTile } = useRecipes()
 
 	return (
 		<section className={s.section}>
@@ -20,12 +21,16 @@ export const Recipes: React.FC = () => {
 						<TypesFilter />
 						<DietsFilter />
 					</nav>
-					<div className={s.recipes_body}>
+					<div className={isTile ? `${s.tile_recipes_body}` : `${s.row_recipes_body}`}>
 						{isLoading ? <div>Loading...</div> :
-							data ? data.results.map(recipe => (
-								<Recipe
+							data ? data.map(recipe => (
+								isTile ? <TileRecipe
 									key={recipe.id}
 									{...recipe} />
+									:
+									<RowRecipe
+										key={recipe.id}
+										{...recipe} />
 							)) : <div>Recipes not found</div>}
 					</div>
 				</div>

@@ -13,24 +13,6 @@ export const FilterRecipesNav: React.FC = () => {
 
 	return (
 		<nav className={s.nav}>
-			<div className={isOpen.dietIsOpen ? s.nav_item : `${s.nav_item} ${s.nav_item_closed}`}>
-				<span className={s.nav_item_title} onClick={() =>
-					setIsOpen(prev => ({ ...prev, dietIsOpen: !isOpen.dietIsOpen }))
-				} >Diet <ArrowDown /> </span>
-				<div className={isOpen.dietIsOpen ? `${s.buttons_wrapper} ${s.buttons_wrapper_open}` : s.buttons_wrapper}>
-					<span>Gluten Free</span>
-					<span>Ketogenic</span>
-					<span>Vegetarian</span>
-					<span>Lacto Vegetarian</span>
-					<span>Ovo Vegetarian</span>
-					<span>Vegan</span>
-					<span>Pescetarian</span>
-					<span>Paleo</span>
-					<span>Primal</span>
-					<span>Low FODMAP</span>
-					<span>Whole30</span>
-				</div>
-			</div>
 			<div className={isOpen.allergiesIsOpen ? s.nav_item : `${s.nav_item} ${s.nav_item_closed}`}>
 				<span className={s.nav_item_title} onClick={() =>
 					setIsOpen(prev => ({ ...prev, allergiesIsOpen: !isOpen.allergiesIsOpen }))

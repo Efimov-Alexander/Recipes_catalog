@@ -10,7 +10,9 @@ export type TRecipe = {
 	cuisines: string[],
 }
 
-export type TRecipes = {
-	results: TRecipe[]
+export type RecipesServerResponse = {
+	results: TRecipe[],
+	offset: number,
+	number: number,
+	totalResults: number,
 }
-

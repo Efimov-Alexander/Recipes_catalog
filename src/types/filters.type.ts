@@ -1,15 +1,15 @@
-import { TSelectedDiets } from "./filtersDiets.type"
-import { TSelectedTypes } from "./filtersTypes.type"
-
 export type TFilterState = {
 	selectedTypes: TSelectedTypes,
 	selectedDiets: TSelectedDiets,
 	activeFilter: TActiveFilter,
+	selectedSort: string,
+	isTile: boolean,
 	fetch: boolean,
 }
 export type TSelectedFilters = {
 	selectedTypesArray: string[],
 	selectedDietsArray: string[],
+	selectedSort: string,
 }
 export type TActiveFilter = {
 	select_all_types: boolean,
@@ -24,7 +24,35 @@ export type TActiveFilter = {
 	paleo: boolean,
 	primal: boolean,
 	low_FODMAP: boolean,
-	whole30: boolean,
+	whole_30: boolean,
+	main_course: boolean,
+	side_dish: boolean,
+	dessert: boolean,
+	appetizer: boolean,
+	salad: boolean,
+	bread: boolean,
+	breakfast: boolean,
+	soup: boolean,
+	beverage: boolean,
+	sauce: boolean,
+	marinade: boolean,
+	fingerfood: boolean,
+	snack: boolean,
+}
+export type TSelectedDiets = {
+	gluten_free: boolean,
+	ketogenic: boolean,
+	vegetarian: boolean,
+	lacto_vegetarian: boolean,
+	ovo_vegetarian: boolean,
+	vegan: boolean,
+	pescetarian: boolean,
+	paleo: boolean,
+	primal: boolean,
+	low_FODMAP: boolean,
+	whole_30: boolean,
+}
+export type TSelectedTypes = {
 	main_course: boolean,
 	side_dish: boolean,
 	dessert: boolean,

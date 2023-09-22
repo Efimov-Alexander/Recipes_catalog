@@ -2,24 +2,129 @@
 	display: flex;
 	margin-bottom: 24px;
 }
-
-.nav {
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-	font-size: 20px;
-	color: #84bd00;
-	font-weight: 600;
-	height: 62px;
-	align-items: center;
-	border-top: 2px solid #d9d9d9;
-	border-bottom: 2px solid #d9d9d9;
-}
-
 .title {
 	white-space: nowrap;
 	color: #84bd00;
 	font-size: 50px;
 	font-family: "Montez", sans-serif;
 	margin-right: 114px;
+}
+
+.sort {
+	width: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-right: 20px;
+}
+.select {
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	gap: 70px;
+	font-size: 22px;
+	cursor: pointer;
+	border: 2px solid #84bd00;
+	box-shadow: 0 0 20px 1px #dddddd;
+	background-color: #fff;
+	border-radius: 5px;
+	padding: 6px 12px;
+	transition: all 0.2s ease 0s;
+	@media (any-hover: hover) {
+		&:hover {
+			border: 2px solid #6e9d00;
+			background-color: #f9ffec;
+		}
+	}
+	svg {
+		transform: rotate(90deg);
+		transition: all 0.2s ease 0s;
+	}
+}
+.select_active {
+	svg {
+		transform: rotate(0deg);
+	}
+}
+.menu {
+	position: absolute;
+	display: flex;
+	box-shadow: 0 0 20px 1px #a1a1a1;
+	flex-wrap: wrap;
+	top: 110%;
+	max-width: 700px;
+	justify-content: center;
+	width: max-content;
+	gap: 14px;
+	background-color: #fff;
+	border: 1px solid #a5a5a5;
+	border-radius: 5px;
+	padding: 20px 10px;
+	z-index: 10;
+	transition: all 0.2s ease 0s;
+}
+.menu_closed {
+	opacity: 0;
+	visibility: hidden;
+}
+.menu_active {
+	opacity: 1;
+	visibility: visible;
+}
+.button {
+	background-color: #fff;
+	font-size: 18px;
+	border: 2px solid #84bd00;
+	border-radius: 5px;
+	white-space: nowrap;
+	padding: 4px 8px;
+	cursor: pointer;
+	@media (any-hover: hover) {
+		&:hover {
+			border: 2px solid #6e9d00;
+			background-color: #f9ffec;
+		}
+	}
+}
+.tile_or_row {
+	border: 2px solid #84bd00;
+	box-shadow: 0 0 20px 1px #dddddd;
+	background-color: #fff;
+	border-radius: 5px;
+	padding: 6px 12px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	svg {
+		cursor: pointer;
+		height: 26px;
+		width: 26px;
+	}
+}
+.tile {
+	transition: all 0.2s ease 0s;
+	@media (any-hover: hover) {
+		&:hover {
+			fill: #84bd00;
+		}
+	}
+}
+.tile_active {
+	fill: #000;
+}
+.row {
+	transition: all 0.2s ease 0s;
+	@media (any-hover: hover) {
+		&:hover {
+			path {
+				stroke: #84bd00;
+			}
+		}
+	}
+}
+.row_active {
+	path {
+		stroke: #000;
+	}
 }

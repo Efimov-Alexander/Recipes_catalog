@@ -1,7 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { TActiveFilter, TFilterState } from '../types/filters.type';
-import { TSelectedTypes } from '../types/filtersTypes.type';
-import { TSelectedDiets } from '../types/filtersDiets.type';
+import { TActiveFilter, TFilterState, TSelectedDiets, TSelectedTypes } from '../types/filters.type';
 
 export const initialState: TFilterState = {
 	selectedTypes: {
@@ -30,7 +28,7 @@ export const initialState: TFilterState = {
 		primal: false,
 		vegan: false,
 		vegetarian: false,
-		whole30: false,
+		whole_30: false,
 	},
 	activeFilter: {
 		select_all_diets: false,
@@ -45,7 +43,7 @@ export const initialState: TFilterState = {
 		primal: false,
 		vegan: false,
 		vegetarian: false,
-		whole30: false,
+		whole_30: false,
 		main_course: false,
 		side_dish: false,
 		dessert: false,
@@ -60,7 +58,9 @@ export const initialState: TFilterState = {
 		fingerfood: false,
 		snack: false,
 	},
-	fetch: true
+	selectedSort: "Popularity",
+	fetch: true,
+	isTile: true,
 }
 
 const filterSlice = createSlice({
@@ -80,7 +80,13 @@ const filterSlice = createSlice({
 		},
 		setActiveFilter(state, action: PayloadAction<TActiveFilter>) {
 			state.activeFilter = action.payload
-		}
+		},
+		setSelectedSort(state, action: PayloadAction<string>) {
+			state.selectedSort = action.payload
+		},
+		setIsTile(state, action: PayloadAction<boolean>) {
+			state.isTile = action.payload
+		},
 	},
 });
 
