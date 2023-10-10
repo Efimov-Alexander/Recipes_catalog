@@ -7,72 +7,68 @@
 	&:not(:last-child) {
 		border-bottom: 2px solid #d9d9d9;
 	}
-}
-
-.nav_item_closed {
-	&:not(:last-child) {
-		margin-bottom: 0px;
-	}
-	.nav_item_title {
-		svg {
-			transform: rotate(90deg);
+	&_closed {
+		&:not(:last-child) {
+			margin-bottom: 0px;
 		}
-	}
-}
-
-.nav_item_title {
-	cursor: pointer;
-	position: relative;
-	width: fit-content;
-	display: inline-flex;
-	align-items: center;
-	transition: all 0.2s ease 0s;
-	display: flex;
-	padding: 14px 22px;
-	justify-content: space-between;
-	width: 100%;
-	align-items: center;
-	&:last-child {
-		padding-bottom: 10px;
-	}
-	@media (any-hover: hover) {
-		&:hover {
-			background-color: #f9ffec;
-			color: #84bd00;
+		.nav_item_title {
 			svg {
-				path {
-					fill: #84bd00;
-				}
+				transform: rotate(90deg);
 			}
 		}
 	}
-	svg {
-		margin-left: 32px;
-		height: 6px;
-		width: 20px;
+	&_title {
+		cursor: pointer;
 		position: relative;
+		width: fit-content;
+		display: inline-flex;
+		align-items: center;
 		transition: all 0.2s ease 0s;
-		path {
-			fill: #2f2f2f;
+		display: flex;
+		padding: 14px 22px;
+		justify-content: space-between;
+		width: 100%;
+		align-items: center;
+		&:last-child {
+			padding-bottom: 10px;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #f9ffec;
+				color: #84bd00;
+				svg {
+					path {
+						fill: #84bd00;
+					}
+				}
+			}
+		}
+		svg {
+			margin-left: 32px;
+			height: 6px;
+			width: 20px;
+			position: relative;
 			transition: all 0.2s ease 0s;
+			path {
+				fill: #2f2f2f;
+				transition: all 0.2s ease 0s;
+			}
 		}
 	}
 }
-
 .buttons_wrapper {
 	position: absolute;
 	opacity: 0;
 	visibility: hidden;
 	transform: translateY(-60px);
 	transition: transform 0.2s ease 0s;
+	&_open {
+		position: relative;
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
 }
-.buttons_wrapper_open {
-	position: relative;
-	opacity: 1;
-	visibility: visible;
-	transform: translateY(0);
-}
-
 .button_wrapper {
 	cursor: pointer;
 	padding: 6px 14px;
@@ -126,4 +122,14 @@
 		background-size: 100% 80%;
 		transition: all 0.3s ease 0s;
 	}
+}
+.button_show_all {
+	display: flex;
+	margin: 0 auto;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	background-color: #fff;
+	cursor: pointer;
+	font-size: 18px;
 }

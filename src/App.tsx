@@ -1,17 +1,14 @@
 import './aseets/styles/App.scss';
 import './aseets/styles/null.css'
-import { Recipes } from './components/Recipes/Recipes';
-import { Header } from './components/Header/Header';
-import { Main } from './components/Main/Main';
+import { HomePage } from './pages/HomePage';
+
 
 
 function App() {
 
 	return (
 		<>
-			<Header />
-			<Main />
-			<Recipes />
+			<HomePage />
 		</>
 	);
 }

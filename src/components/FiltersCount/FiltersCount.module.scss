@@ -1,0 +1,50 @@
+.selected_filters_count_button {
+	background-color: #6e9d00;
+	padding: 4px 10px;
+	border-radius: 5px;
+	font-size: 18px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-family: "Montserrat", sans-serif;
+	transition: all 0.2s ease 0s;
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #83bb00;
+		}
+	}
+}
+.selected_filters_count_cross {
+	border: none;
+	position: relative;
+	width: 10px;
+	cursor: pointer;
+	&::before {
+		position: absolute;
+		right: 50%;
+		top: 50%;
+		transform: translateY(-50%) rotate(45deg);
+		content: "";
+		display: block;
+		height: 14px;
+		width: 2px;
+		background-color: #ffffff;
+		border-radius: 3px;
+	}
+	&::after {
+		position: absolute;
+		right: 50%;
+		top: 50%;
+		transform: translateY(-50%) rotate(-45deg);
+		content: "";
+		display: block;
+		height: 14px;
+		width: 2px;
+		background-color: #fff;
+		border-radius: 3px;
+	}
+}

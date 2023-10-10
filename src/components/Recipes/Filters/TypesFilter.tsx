@@ -1,13 +1,13 @@
 import s from './Filter.module.scss'
 import { ReactComponent as ArrowDown } from '../../../aseets/images/svg/arrow_down.svg'
-import { useTypesFilter } from '../../../hooks/useTypesFilter'
-import { ShowButton } from '../../ui/ShowButton'
+import { useTypesFilter } from '../../../hooks/filtersHooks/useTypesFilter'
+import { ShowButton } from '../../ShowButton/ShowButton'
 import { TSelectedTypes } from '../../../types/filters.type'
 
 
 export const TypesFilter: React.FC = () => {
 
-	const { selectedTypes, setTypesIsOpen, typesIsOpen, setActiveFilter, setFetch, activeFilter, onSelectAll, setTypesAndActiveFilter } = useTypesFilter()
+	const { selectedTypes, setTypesIsOpen, typesIsOpen, activeFilter, onSelectAll, setTypesAndActiveFilter } = useTypesFilter()
 
 	return (
 		<div className={typesIsOpen ? s.nav_item : `${s.nav_item} ${s.nav_item_closed}`}>
@@ -20,7 +20,7 @@ export const TypesFilter: React.FC = () => {
 						type='checkbox'
 						onChange={onSelectAll} />
 					<div className={s.button_text}>Select all</div>
-					{activeFilter.select_all_types && <ShowButton setFetch={setFetch} setActiveFilter={setActiveFilter} />}
+					{activeFilter.select_all_types && <ShowButton />}
 				</div>
 				{Object.keys(selectedTypes).map(type => {
 					return (
@@ -31,11 +31,11 @@ export const TypesFilter: React.FC = () => {
 								onChange={() => setTypesAndActiveFilter(type as keyof TSelectedTypes)}
 								type='checkbox' />
 							<div className={s.button_text}>{`${type.charAt(0).toUpperCase()}${type.split("_").join(" ").slice(1)}`}</div>
-							{activeFilter[type as keyof TSelectedTypes] && <ShowButton setFetch={setFetch} setActiveFilter={setActiveFilter} />}
+							{activeFilter[type as keyof TSelectedTypes] && <ShowButton />}
 						</div>
 					)
 				})}
 			</div>
-		</div>
+		</div >
 	)
 }

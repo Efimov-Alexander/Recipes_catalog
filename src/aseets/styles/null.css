@@ -19,6 +19,12 @@ body {
 	min-width: 320px;
 }
 
+#root {
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+}
+
 *,
 *:before,
 *:after {

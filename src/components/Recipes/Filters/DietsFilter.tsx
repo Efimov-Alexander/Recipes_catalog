@@ -1,13 +1,13 @@
 import s from './Filter.module.scss'
 import { ReactComponent as ArrowDown } from '../../../aseets/images/svg/arrow_down.svg'
-import { useDietsFilter } from '../../../hooks/useDietsFilter'
-import { ShowButton } from '../../ui/ShowButton'
+import { useDietsFilter } from '../../../hooks/filtersHooks/useDietsFilter'
+import { ShowButton } from '../../ShowButton/ShowButton'
 import { TSelectedDiets } from '../../../types/filters.type'
 
 
 export const DietsFilter: React.FC = () => {
 
-	const { selectedDiets, setDietsIsOpen, dietsIsOpen, setFetch, activeFilter, setActiveFilter, setDietsAndActiveFilter, onSelectAll } = useDietsFilter()
+	const { selectedDiets, setDietsIsOpen, dietsIsOpen, activeFilter, setDietsAndActiveFilter, onSelectAll } = useDietsFilter()
 
 	return (
 		<div className={dietsIsOpen ? s.nav_item : `${s.nav_item} ${s.nav_item_closed}`}>
@@ -20,7 +20,7 @@ export const DietsFilter: React.FC = () => {
 						type='checkbox'
 						onChange={onSelectAll} />
 					<div className={s.button_text}>Select all</div>
-					{activeFilter.select_all_diets && <ShowButton setFetch={setFetch} setActiveFilter={setActiveFilter} />}
+					{activeFilter.select_all_diets && <ShowButton />}
 				</div>
 				{Object.keys(selectedDiets).map((diet) => {
 					return (
@@ -31,7 +31,7 @@ export const DietsFilter: React.FC = () => {
 								onChange={() => setDietsAndActiveFilter(diet as keyof TSelectedDiets)}
 								type='checkbox' />
 							<div className={s.button_text}>{`${diet.charAt(0).toUpperCase()}${diet.split("_").join(" ").slice(1)}`}</div>
-							{activeFilter[diet as keyof TSelectedDiets] && <ShowButton setFetch={setFetch} setActiveFilter={setActiveFilter} />}
+							{activeFilter[diet as keyof TSelectedDiets] && <ShowButton />}
 						</div>
 					)
 				})}
